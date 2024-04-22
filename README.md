@@ -98,6 +98,21 @@ Please check out [docs/MODEL_ZOO.md](docs/MODEL_ZOO.md)
 ./scripts/inference.sh ${CONFIG} ${CHECKPOINT} ${VIDEO_NAME} # ${OUTPUT_DIR}, optional
 ```
 
+Inference one video
+``` bash
+./scripts/inference_video.sh
+```
+
+Split videos to slice for memory limit
+``` bash
+python split_video.py
+```
+
+Inference with directory
+``` bash
+./scripts/inference_video_directory.sh
+```
+
 Inference SMPL (Download the SMPL model `basicModel_neutral_lbs_10_207_0_v1.0.0.pkl` from [here](https://smpl.is.tue.mpg.de/) and put it in `model_files/`).
 ``` bash
 ./scripts/inference_3d.sh ./configs/smpl/256x192_adam_lr1e-3-res34_smpl_24_3d_base_2x_mix.yaml ${CHECKPOINT} ${VIDEO_NAME} # ${OUTPUT_DIR}, optional
