@@ -185,8 +185,6 @@ if __name__ == "__main__":
     mode, input_sources = check_input()
     os.makedirs(args.outputpath, exist_ok=True)
 
-    # todo: Fix Memory Leak
-
     for input_name in input_sources:
         input_source = os.path.join(args.video_dir, input_name)
         save_name = os.path.splitext(input_name)[0] + ".json"
@@ -274,6 +272,10 @@ if __name__ == "__main__":
             det_loader.stop()
             writer.clear_queues()
             det_loader.clear_queues()
+            writer.terminate()
+            det_loader.terminate()
+            del writer
+            del det_loader
         except Exception as e:
             print(repr(e))
             print('An error as above occurs when processing the images, please check it')
