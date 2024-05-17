@@ -50,7 +50,12 @@ if __name__ == '__main__':
     # target_path = "/media/bossun/新增磁碟區/Datasets/AIST_video_clean_part/"
     # split(videos, target_path)
 
-    video_path = "/media/bossun/新增磁碟區/Datasets/Kpop_demo_videos"
+    # video_path = "/media/bossun/新增磁碟區/Datasets/Kpop_demo_videos"
+    # videos = sorted(glob.glob(os.path.join(video_path, "*.mp4")))
+    # target_path = "/media/bossun/新增磁碟區/Datasets/Kpop_demo_part_videos/"
+    # split(videos, target_path)
+
+    video_path = "/media/bossun/新增磁碟區/Datasets/JDance"
     videos = sorted(glob.glob(os.path.join(video_path, "*.mp4")))
-    target_path = "/media/bossun/新增磁碟區/Datasets/Kpop_demo_part_videos/"
+    target_path = "/media/bossun/新增磁碟區/Datasets/JDance_part/"
     split(videos, target_path)
