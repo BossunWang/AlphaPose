@@ -53,6 +53,8 @@ pip install git+ssh://git@github.com/facebookresearch/pytorch3d.git@stable
 ```shell
 # 1. Install PyTorch
 pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
+# or run into docker
+sudo docker run --gpus all --shm-size 8G --rm -idt --name alphapose -p 9487:22 -v /home/bossun/Project:/workspace/Project -v /media/bossun/WINDOWS11/Datasets:/workspace/Datasets pytorch/pytorch:1.12.0-cuda11.3-cudnn8-devel /bin/bash
 
 # Check torch environment by:  python3 -m torch.utils.collect_env
 
@@ -63,14 +65,18 @@ cd AlphaPose
 # 3. install
 export PATH=/usr/local/cuda/bin/:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
-pip install cython
+pip install cython==0.27.3
+pip install ninja
+pip install easydict halpecocotools munkres natsort opencv-python pyyaml scipy tensorboardx  terminaltables timm==0.1.20 tqdm visdom jinja2 typeguard
 sudo apt-get install libyaml-dev
-python3 setup.py build develop --user
+pip install pycocotools
+python setup.py build develop
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 # 4. Install PyTorch3D (Optional, only for visualization)
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 conda install -c bottler nvidiacub
-pip install git+ssh://git@github.com/facebookresearch/pytorch3d.git@stable
+pip install git+https://git@github.com/facebookresearch/pytorch3d.git@stable
 ```
 
 #### Windows
