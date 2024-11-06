@@ -36,19 +36,8 @@ CKPT="pretrained_models/halpe26_fast_res50_256x192.pth"
 #    --qsize 1 \
 #    --sp
 #
-#VIDEO="/workspace/Datasets/DanceCover/source"
-#OUTDIR="/workspace/Datasets/DanceCover/source_alpha_pose_data/"
-#python scripts/demo_inference_video_directory.py \
-#    --cfg ${CONFIG} \
-#    --checkpoint ${CKPT} \
-#    --video_dir ${VIDEO} \
-#    --outdir ${OUTDIR} \
-#    --detector yolox-x \
-#    --qsize 1 \
-#    --sp
-
-VIDEO="/workspace/Datasets/DanceDatasets/source"
-OUTDIR="/workspace/Datasets/DanceDatasets/source_alpha_pose_data/"
+VIDEO="/workspace/Datasets/DanceCover/source"
+OUTDIR="/workspace/Datasets/DanceCover/source_alpha_pose_data/"
 python scripts/demo_inference_video_directory.py \
     --cfg ${CONFIG} \
     --checkpoint ${CKPT} \
@@ -57,3 +46,14 @@ python scripts/demo_inference_video_directory.py \
     --detector yolox-x \
     --qsize 1 \
     --sp
+
+#VIDEO="/workspace/Datasets/VTM_on_cloud_in_house_solution/source"
+#OUTDIR="/workspace/Datasets/VTM_on_cloud_in_house_solution/source_alpha_pose_data/"
+#python scripts/demo_inference_video_directory.py \
+#    --cfg ${CONFIG} \
+#    --checkpoint ${CKPT} \
+#    --video_dir ${VIDEO} \
+#    --outdir ${OUTDIR} \
+#    --detector yolox-x \
+#    --qsize 1 \
+#    --sp
