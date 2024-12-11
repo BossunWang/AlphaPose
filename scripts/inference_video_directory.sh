@@ -45,7 +45,20 @@ python scripts/demo_inference_video_directory.py \
     --outdir ${OUTDIR} \
     --detector yolox-x \
     --qsize 1 \
-    --sp
+    --sp \
+    --pose_track
+
+#VIDEO="/workspace/Datasets/DanceCover/source_test"
+#OUTDIR="/workspace/Datasets/DanceCover/source_alpha_pose_data_test/"
+#python scripts/demo_inference_video_directory.py \
+#    --cfg ${CONFIG} \
+#    --checkpoint ${CKPT} \
+#    --video_dir ${VIDEO} \
+#    --outdir ${OUTDIR} \
+#    --detector yolox-x \
+#    --qsize 1 \
+#    --sp \
+#    --pose_track
 
 #VIDEO="/workspace/Datasets/VTM_on_cloud_in_house_solution/source"
 #OUTDIR="/workspace/Datasets/VTM_on_cloud_in_house_solution/source_alpha_pose_data/"

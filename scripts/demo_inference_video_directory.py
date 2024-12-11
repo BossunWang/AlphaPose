@@ -10,6 +10,15 @@ import torch
 from tqdm import tqdm
 import natsort
 
+# Get the absolute path of the current script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+
+# Append the parent directory to sys.path
+sys.path.insert(0, parent_dir)
+
 from detector.apis import get_detector
 from trackers.tracker_api import Tracker
 from trackers.tracker_cfg import cfg as tcfg
